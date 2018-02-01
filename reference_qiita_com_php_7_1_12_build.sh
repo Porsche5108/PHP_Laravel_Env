@@ -185,7 +185,7 @@ fi
 
 
 read -p "Install samba?(Y/N) " ans;
-if [ "ans" == "Y" -o "ans" == "y" ];then
+if [ "$ans" == "Y" -o "$ans" == "y" ];then
     if [ -f 032samba_config.sh ];then
         sh 032samba_config.sh && echo "finish 032 step" >> config.status;
     fi

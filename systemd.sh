@@ -17,8 +17,8 @@ if [ -f php-fpm.service ]; then
    sudo cp php-fpm.service /etc/systemd/system 
 fi
 
-read -p "Install redis server?(Y/N) " ans
-if [ "ans" == "Y" -o "ans" == "y" ]; then
+read -p "Install redis server?(Y/N) " ans;
+if [ "$ans" == "Y" -o "$ans" == "y" ]; then
     if [ -f 033redis_server.sh ]; then
         sh 033redis_server.sh && \
         echo "finish 033 step" >> config.status && \
