@@ -18,8 +18,13 @@ fi
 
 echo -e '\n\n\n\n\n\n\n';
 
-if [ -f 031yum_repo.sh ]; then
-    sh 031yum_repo.sh && echo "finish 031 step" >> config.status;
+
+
+read -p "Change repo to ALI?(Y/N) " answer;
+if [ "$answer" == "Y" -o "$answer" == "y" ];then
+    if [ -f 031yum_repo.sh ]; then
+        sh 031yum_repo.sh && echo "finish 031 step" >> config.status;
+    fi
 fi
 
 echo -e '\n\n\n\n\n\n\n';
