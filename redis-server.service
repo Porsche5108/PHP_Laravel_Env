@@ -1,0 +1,11 @@
+[Unit]
+Description=PHP High Performance Cache System -- Redis Server
+After=local-fs.target network.target nginx.service php-fpm.service
+
+[Service]
+PIDFile=/run/redis-server.pid
+ExecStart=/usr/local/redis-stable/src/redis-server
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
