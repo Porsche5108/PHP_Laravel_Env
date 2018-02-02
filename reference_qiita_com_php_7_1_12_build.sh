@@ -167,6 +167,26 @@ fi
 echo -e '\n\n\n\n\n\n\n';
 	
 
+read -p "Install Heroku?(Y/N) " ans;
+if [ "$ans" == "Y" -o "$ans" == "y" ]; then
+    if [ -f 034heroku_install.sh ]; then
+        sh 034heroku_install.sh && echo "finish 034 step" >> config.status;
+    fi
+fi
+
+echo -e '\n\n\n\n\n\n\n';
+
+
+
+read -p "Install Yarn?(Y/N) " ans;
+if [ "$ans" == "Y" -o "$ans" == "y" ]; then
+    if[ -f 035yarn_install.sh ]; then
+        sh 035yarn_install.sh && echo "finish 035 step" >> config.status;
+    fi
+fi
+
+echo -e '\n\n\n\n\n\n\n';
+
 read -p "Create an empty Project?(Y/N) " answer;
 if [ "$answer" == "N" -o "$answer" == "n" ];then
     exit 0;
@@ -230,3 +250,5 @@ if [ -f 029Setup_Admin.sh ]; then
 fi
 
 echo -e '\n\n\n\n\n\n\n';
+
+
